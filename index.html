@@ -2854,7 +2854,8 @@
                         // Show best sellers for home page
                         productsToShow = products.filter(p => 
                             p.badge === 'BEST SELLER' || p.badge === 'HOT' || p.badge === 'TRENDING'
-                        ).slice(0, count);
+                        );
+                        productsToShow = getSortedProducts(productsToShow).slice(0, count);
                         renderProducts(productsToShow, 'productsGrid');
                         break;
                     case 'products':
